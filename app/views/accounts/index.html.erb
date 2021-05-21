@@ -1,0 +1,11 @@
+<h1>Your Accounts</h1>
+<h2> Total Ballance: $<%= Account.total_balance %> </h2>
+
+<%= link_to "Add new accont", new_account_path  %>
+
+<% @accounts.each do |account| %>
+<p> Account Name:  <%= link_to account.name , account_path(account)  %>  </p>
+<p> Account Type: <%= account.account_type %> </p>
+<p> Account Balance:  $<%= account.account_balance %> </p>
+<% end %>
+

@@ -1,0 +1,12 @@
+<div class="category mt-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-lg-6">
+      <h1>Add a new holding</h1>
+        <%= simple_form_for [@account, @holding] do |f| %>
+          <%= f.association :stock, label_method: :ticker, value_method: :id %>
+          <%= f.input :shares %>
+          <%= f.submit "Add", class: "btn btn-info mt-2" %>
+        <% end %>
+        </div>
+      </div>
+    </div>

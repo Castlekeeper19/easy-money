@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_05_21_133939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "accounts", force: :cascade do |t|
+    t.string "name"
+    t.string "account_type"
+    t.float "balance"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "holdings", force: :cascade do |t|
+    t.integer "shares"
+    t.bigint "stock_id", null: false
+    t.bigint "account_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_holdings_on_account_id"
+    t.index ["stock_id"], name: "index_holdings_on_stock_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "ticker"
+    t.float "stock_price"
+    t.string "asset_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "holdings", "accounts"
+  add_foreign_key "holdings", "stocks"
 end
