@@ -2,6 +2,7 @@ class Account < ApplicationRecord
   ACCOUNT_TYPES = ["Cash", "Retirement", "Brokerage","Liability"]
 
   has_many :holdings
+  has_many :goals
   has_many :stocks, through: :holdings
   validates :name, presence: true
   validates :account_type, inclusion: {in: ACCOUNT_TYPES}

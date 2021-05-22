@@ -8,20 +8,48 @@
 
 
 <%= link_to "Add a holding", new_account_holding_path(@account)  %>
+<%= link_to "Add a goal", new_account_goal_path(@account)  %>
 
-<% @account.stocks.each do |stock| %>
-<div class="d-flex card_stock">
-  <p> Stock Ticker: <%= stock.ticker %> </p>
-  <p> Stock Price: $<%= stock.stock_price %> </p>
-  <% stock.holdings.each do |holding| %>
-  <p> Stock Shares:  <%= holding.shares %> </p>
-  <p> Stock Balance:  $<%= holding.stock_balance %> </p>
-  <%= link_to "Edit Holding", edit_account_holding_path(holding)  %>
-  <%= link_to "Remove Holding", holding_path(holding.id), method: :delete,  data: { confirm: 'Do you want to delete?' }  %>
 
-  <% end %>
+<table class="table table-striped table-dark">
+  <thead class="">
+    <tr>
+      <th scope="col">*</th>
+      <th scope="col">Ticker</th>
+      <th scope="col">Stock Price</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Balance</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @account.stocks.each do |stock| %>
+    <tr>
+      <th scope="row">*</th>
+      <td><%= stock.ticker %></td>
+      <td>$<%= stock.stock_price %></td>
+      <% stock.holdings.each do |holding| %>
+      <td><%= holding.shares %></td>
+      <td>$<%= holding.stock_balance %></td>
+      <td><%= link_to "Edit", edit_account_holding_path(holding)  %></td>
+      <td><%= link_to "Remove", holding_path(holding.id), method: :delete,  data: { confirm: 'Do you want to delete?' }  %></td>
+    <% end %>
+    </tr>
+
+   <% end %>
+  </tbody>
+</table>
+
+
+<% @account.goals.each do |goal| %>
+<div class ="card_stock flex-column">
+<p> Name: <%= goal.name%> </p>
+<p> Current: <%= goal.goal_balance.round(2)%> </p>
+<p> Goal: <%= goal.goal_amount.round(2)%> </p>
+<p> Complete By: <%= goal.end_date%> </p>
+<p> Completed: <%= goal.completed%> </p>
+
 </div>
 <% end %>
-
-<%= link_to "Accounts Home", accounts_path  %>
 </div>

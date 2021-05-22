@@ -1,0 +1,16 @@
+<div class="category mt-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-lg-6">
+      <h1>Add a new goal</h1>
+        <%= simple_form_for [@account, @goal] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :goal_amount %>
+          <%= f.input :goal_balance %>
+          <%= f.input :end_date %>
+          <%= f.submit "Add", class: "btn btn-info mt-2" %>
+        <% end %>
+        </div>
+      </div>
+
+
+    </div>

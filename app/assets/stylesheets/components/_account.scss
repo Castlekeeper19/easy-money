@@ -3,6 +3,7 @@
   padding: 8px;
   margin-bottom: 8px;
   border-radius: 8px;
+  position: relative;
   transition-duration: .3s;
   a {
     color: white;
@@ -19,4 +20,12 @@
   background-color: white;
   padding: 8px;
   border-radius: 4px;
+}
+
+.card-link {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left: 0;
+  width:100%;
 }
