@@ -27,8 +27,6 @@ require "faker"
 
 puts "...clearing database"
 
-Stock.destroy_all
-
 puts "...Creating stocks"
 
 

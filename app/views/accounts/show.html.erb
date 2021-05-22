@@ -41,15 +41,28 @@
   </tbody>
 </table>
 
-
-<% @account.goals.each do |goal| %>
-<div class ="card_stock flex-column">
-<p> Name: <%= goal.name%> </p>
-<p> Current: <%= goal.goal_balance.round(2)%> </p>
-<p> Goal: <%= goal.goal_amount.round(2)%> </p>
-<p> Complete By: <%= goal.end_date%> </p>
-<p> Completed: <%= goal.completed%> </p>
-
-</div>
-<% end %>
+<h2> ACCOUNT GOALS </h2>
+<div class= "cards_goals row">
+  <% @account.goals.each do |goal| %>
+    <div class ="card_goal col-5">
+      <div class="d-flex border-bottom mb-2">
+        <div class="goal_img">
+          <div class="card_goal_img" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%=goal.photo.attached? ? cl_image_path(goal.photo.key) : image_path('https://source.unsplash.com/400x400/?#{goal.name}') %>);">
+          </div>
+        </div>
+        <div class="card_goal_info">
+          <p> Name: <%= goal.name%> </p>
+          <p> Current: $<%= goal.goal_balance.round(2)%> </p>
+          <p> Goal: $<%= goal.goal_amount.round(2)%> </p>
+          <p> Complete By: <%= goal.end_date%> </p>
+          <p> Completed: <%= goal.completed%> </p>
+        </div>
+      </div>
+        <div class="card_goal_actions d-flex justify-content-around">
+         <%= link_to "Edit", edit_account_goal_path(goal), class: "button"  %>
+          <%= link_to "Remove", goal_path(goal.id), method: :delete,  data: { confirm: 'Do you want to delete?' }, class: "button"  %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

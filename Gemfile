@@ -36,6 +36,7 @@ gem "chartkick"
 
 #seed gems
 gem 'rest-client', '~> 2.1'
+gem 'cloudinary', '~> 1.16.0'
 
 group :development, :test do
   gem 'pry-byebug'
