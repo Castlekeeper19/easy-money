@@ -32,6 +32,7 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'faker'
+gem "chartkick"
 
 #seed gems
 gem 'rest-client', '~> 2.1'

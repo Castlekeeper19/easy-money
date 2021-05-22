@@ -1,0 +1,22 @@
+.card_account {
+  background-color: $primary;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition-duration: .3s;
+  a {
+    color: white;
+  } p {
+    font-size: 24px;
+  }
+  &:hover {
+    background-color: $info;
+
+  }
+}
+
+.card_accounts {
+  background-color: white;
+  padding: 8px;
+  border-radius: 4px;
+}

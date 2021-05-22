@@ -7,18 +7,20 @@ class Account < ApplicationRecord
   validates :account_type, inclusion: {in: ACCOUNT_TYPES}
 
   def account_balance
-    sum = 0
+    @balance = 0
     self.holdings.each do |holding|
-     sum += holding.stock_balance
+     @balance += holding.stock_balance
     end
-    sum.round(2)
+    self.balance = @balance.round(2)
+    self.save
+    self.balance
   end
 
   def self.total_balance
-    accounts = Account.all
+   # accounts = Account.all
     sum = 0
-    accounts.each do |account|
-      sum += account.account_balance
+   Account.all.each do |account|
+      sum += account.balance
     end
     sum
   end

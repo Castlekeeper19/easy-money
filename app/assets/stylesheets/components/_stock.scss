@@ -1,0 +1,17 @@
+.card_stock {
+  background-color: $primary;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 8px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card_stock a {
+  color: white;
+}
+
+.card_stock p {
+  color: $light_blue;
+}

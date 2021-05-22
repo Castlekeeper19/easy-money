@@ -1,20 +1,27 @@
-<p> Account Name: <%= @account.name %> </p>
+<%= render 'accounts/navbar' %>
+
+<div class="container">
+<h1 class ="mt-3"> Account Name: <%= @account.name %> </h1>
+<h2> Account Balance:  $<%= @account.account_balance %> </h2>
 <p> Account Type: <%= @account.account_type %> </p>
-<p> Account Balance:  $<%= @account.account_balance %> </p>
+
 
 
 <%= link_to "Add a holding", new_account_holding_path(@account)  %>
 
 <% @account.stocks.each do |stock| %>
-<p> Stock Ticker: <%= stock.ticker %> </p>
-<p> Stock Price: $<%= stock.stock_price %> </p>
-<% stock.holdings.each do |holding| %>
-<p> Stock Shares:  <%= holding.shares %> </p>
-<p> Stock Balance:  $<%= holding.stock_balance %> </p>
-<%= link_to "Edit Holding", edit_account_holding_path(holding)  %>
-<%= link_to "Remove Holding", holding_path(holding.id), method: :delete,  data: { confirm: 'Do you want to delete?' }  %>
+<div class="d-flex card_stock">
+  <p> Stock Ticker: <%= stock.ticker %> </p>
+  <p> Stock Price: $<%= stock.stock_price %> </p>
+  <% stock.holdings.each do |holding| %>
+  <p> Stock Shares:  <%= holding.shares %> </p>
+  <p> Stock Balance:  $<%= holding.stock_balance %> </p>
+  <%= link_to "Edit Holding", edit_account_holding_path(holding)  %>
+  <%= link_to "Remove Holding", holding_path(holding.id), method: :delete,  data: { confirm: 'Do you want to delete?' }  %>
 
-<% end %>
+  <% end %>
+</div>
 <% end %>
 
 <%= link_to "Accounts Home", accounts_path  %>
+</div>
