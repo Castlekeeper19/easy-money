@@ -17,9 +17,8 @@ class Account < ApplicationRecord
   end
 
   def self.total_balance
-   # accounts = Account.all
     sum = 0
-   Account.all.each do |account|
+    Account.all.each do |account|
       sum += account.balance
     end
     sum
