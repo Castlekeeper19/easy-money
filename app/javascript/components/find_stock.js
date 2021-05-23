@@ -14,8 +14,8 @@ const findStock = () => {
   const input = document.querySelector("#stockForm input");
   const stockSearch = document.querySelector("#stockForm");
   const stockName = document.querySelector("#stockName");
-  const stockPrice = document.querySelector(".stockPrice");
-  const stockType = document.querySelector("#stockType");
+  const stockPrice = document.querySelector("#stockStockPrice");
+  const stockType = document.querySelector("#stock_asset_type");
 
   if (stockSearch) {
   stockSearch.addEventListener("submit", (event) => {

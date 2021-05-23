@@ -22,7 +22,7 @@ class Account < ApplicationRecord
     Account.all.each do |account|
       sum += account.balance
     end
-    sum
+    sum.round(2)
   end
 
 end

@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
     resources :holdings, only: [:destroy]
     resources :goals, only: [:destroy]
+    resources :stocks, only: [:new, :create, :edit, :update]
 end

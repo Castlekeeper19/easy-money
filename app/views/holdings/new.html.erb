@@ -8,27 +8,11 @@
           <%= f.submit "Add", class: "btn btn-info mt-2" %>
         <% end %>
 
-       <form class="form-inline mt-5" id="stockForm">
-          <input class="form-control ml-auto" type="text" placeholder="Find Stock" id="stockTicker">
-          <input class="form-control mr-auto btn btn-primary" type="submit" id="tickerSubmit">
-        </form>
-
-        <table class="table mt-4">
-          <tr class="d-flex justify-content-center text-right">
-            <th class="col-1">Stock Name:</th>
-            <td class="col-8 col-md-5" id="stockName">  </td>
-          </tr>
-          <tr class="d-flex justify-content-center text-right">
-            <th class="col-1">Stock Price:</th>
-            <td class="col-8 col-md-5" id="stockPrice">  </td>
-          </tr>
-          <tr class="d-flex justify-content-center text-right">
-            <th class="col-1">Type:</th>
-            <td class="col-8 col-md-5" id="stockType"> </td>
-          </tr>
-        </table>
+        <div class ="d-flex mt-5">
+        <h4 class="mr-4 mt-2">Looking for a stock?</h4>
+        <%= link_to "Add a stock", new_stock_path, class: "btn btn-info text-center"  %>
+        </div>
         </div>
       </div>
-       <script src="dist/main.js"></script>
     </div>
 
