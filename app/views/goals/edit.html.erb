@@ -1,15 +1,15 @@
 <div class="category mt-3">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-8 col-lg-6">
-      <h1>Add a new goal</h1>
+      <h1>Edit your goal: <%= @goal.name %>  </h1>
         <%= simple_form_for [@account, @goal] do |f| %>
           <%= f.input :name %>
-          <%= f.input :goal_amount %>
-          <%= f.input :goal_balance %>
-          <%= f.input :end_date %>
+          <%= f.input :goal_amount, html5: true %>
+          <%= f.input :goal_balance, html5: true %>
+          <%= f.input :end_date, html5: true, input_html: { min: Date.today } %>
           <%= f.input :completed %>
           <%= f.input :photo, as: :file %>
-          <%= f.submit "Add", class: "btn btn-info mt-2" %>
+          <%= f.submit "Edit", class: "btn btn-info mt-2" %>
         <% end %>
         </div>
       </div>

@@ -1,9 +1,9 @@
 <div class="container">
   <div class="d-flex justify-content-between">
     <div>
-    <h1 class ="mt-3"> Account Name: <%= @account.name %> </h1>
-    <h2> Account Balance:  $<%= @account.account_balance %> </h2>
-    <p> Account Type: <%= @account.account_type %> </p>
+    <h1 class ="mt-3"> <strong>Account:</strong>  <%= @account.name %> </h1>
+    <h2> <strong>Account Balance:</strong>  $<%= @account.account_balance %> </h2>
+    <h4> <strong>Account Type:</strong> <%= @account.account_type %> </h4>
     </div>
     <div>
       <h5 class="mt-3 text-right"> <%= link_to "Edit Account", edit_account_path(@account)  %> </h5>
