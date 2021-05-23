@@ -4,27 +4,36 @@
 
 
 const display = (data) => {
-  stockname.innerHTML = data.name.fullName;
+  stockName.innerHTML = data.shortName;
+  stockPrice.innerHTML = data.regularMarketPrice.raw;
+  stockType.innerHTML = data.quoteType;
 
 }
 
 const findStock = () => {
   const input = document.querySelector("#stockForm input");
   const stockSearch = document.querySelector("#stockForm");
-  const stockname = document.querySelector("#stockName");
+  const stockName = document.querySelector("#stockName");
+  const stockPrice = document.querySelector(".stockPrice");
+  const stockType = document.querySelector("#stockType");
+
   if (stockSearch) {
   stockSearch.addEventListener("submit", (event) => {
     // 2.5 preventDefault()
     event.preventDefault();
-    fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile?symbol=AMRN&region=US", {
+    fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile?symbol=${input.value}&region=US`, {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": RAPIDAPI-KEY,
+      "x-rapidapi-key": "8e5f93ae25msh506ca700c9c8e13p19e4a9jsnc5a2c8083450",
       "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         }
       })
-      .then(response => {
-        console.log(response);
+      .then(response => response.json())
+        .then((data) => {
+        console.log(data);
+        const stockData = data.price;
+        console.log(stockData);
+        console.log(display(stockData));
         })
     .catch(err => {
       console.error(err);

@@ -16,13 +16,13 @@ class GoalsController < ApplicationController
 
   def edit
     @account = Account.find(params[:id])
-    @goal = goal.find(params[:account_id])
+    @goal = Goal.find(params[:account_id])
   end
 
   def update
     @goal = Goal.find(params[:id])
     if @goal.update(goal_params)
-      redirect_to account_path(@golding.account)
+      redirect_to account_path(@goal.account)
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class GoalsController < ApplicationController
   private
 
   def goal_params
-    params.require(:goal).permit(:name, :goal_amount, :goal_balance, :end_date, :photo)
+    params.require(:goal).permit(:name, :goal_amount, :goal_balance, :end_date, :completed, :photo)
   end
 
 end

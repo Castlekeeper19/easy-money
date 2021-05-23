@@ -6,6 +6,9 @@ class AccountsController < ApplicationController
   end
 
   def show
+    @holdings = Holding.where(account_id: @account.id)
+    @completed = Goal.where(completed: true, account_id: @account.id)
+    @incompleted = Goal.where(completed: false, account_id: @account.id)
   end
 
   def new
@@ -19,6 +22,22 @@ class AccountsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @account.update(account_params)
+      redirect_to account_path(@account)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @account.destroy
+    redirect_to acounts_path
   end
 
   private
