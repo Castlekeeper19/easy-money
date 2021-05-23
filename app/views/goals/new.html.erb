@@ -6,7 +6,7 @@
           <%= f.input :name %>
           <%= f.input :goal_amount %>
           <%= f.input :goal_balance %>
-          <%= f.input :end_date %>
+          <%= f.input :end_date, html5: true, input_html: { min: Date.today }  %>
           <%= f.input :photo, as: :file %>
           <%= f.submit "Add", class: "btn btn-info mt-2" %>
         <% end %>
