@@ -4,9 +4,9 @@ console.log(RAPIDAPIKEY)
 
 
 const display = (data) => {
-  stockName.innerHTML = data.shortName;
-  stockPrice.innerHTML = data.regularMarketPrice.raw;
-  stockType.innerHTML = data.quoteType;
+  stockName.value = data.shortName;
+  stockPrice.value = data.regularMarketPrice.raw;
+  stockType.value = data.quoteType;
 
 }
 
@@ -16,6 +16,7 @@ const findStock = () => {
   const stockName = document.querySelector("#stockName");
   const stockPrice = document.querySelector("#stockStockPrice");
   const stockType = document.querySelector("#stock_asset_type");
+  const apiKey = RAPIDAPIKEY;
 
   if (stockSearch) {
   stockSearch.addEventListener("submit", (event) => {
@@ -24,7 +25,7 @@ const findStock = () => {
     fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile?symbol=${input.value}&region=US`, {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": RAPIDAPIKEY,
+      "x-rapidapi-key": apiKey,
       "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         }
       })
