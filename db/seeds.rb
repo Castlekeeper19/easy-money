@@ -38,3 +38,35 @@ puts "...Creating stocks"
       )
   end
 puts "created #{Stock.count} stocks"
+
+
+
+require "faker"
+
+puts "...clearing database"
+
+User.destroy_all
+Workout.destroy_all
+
+puts "...Creating Users & Workouts"
+
+
+
+10.times do
+  User.create!(
+      name:  Faker::Name.name
+      location: Faker::Address.street_address
+      email: Faker::Internet.email
+      password: Faker::Internet.password
+  )
+    1.times do
+      Workout.create!(
+      category: Workout::CATEGORY.sample,
+      location: Faker::Address.street_address,
+      name: Faker::Verb.ing_form
+      user_id:
+
+
+  )
+  end
+end

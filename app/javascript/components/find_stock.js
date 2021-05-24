@@ -1,6 +1,6 @@
 //const input = document.querySelector('#search');
 // const results = document.querySelector('#results');
-
+console.log(RAPIDAPIKEY)
 
 
 const display = (data) => {
@@ -24,7 +24,7 @@ const findStock = () => {
     fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile?symbol=${input.value}&region=US`, {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": "RAPIDAPIKEY",
+      "x-rapidapi-key": RAPIDAPIKEY,
       "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         }
       })
@@ -43,49 +43,6 @@ const findStock = () => {
 }
 export { findStock };
 
-//Code from Yann Livecode
-// 2. Listen to submit button
-// form.addEventListener("submit", (event) => {
-//   // 2.5 preventDefault()
-//   event.preventDefault();
-//   const url = `https://person.clearbit.com/v2/combined/find?email=${input.value}`;
-//   // 3. Fetch API
-//   fetch(url, {
-//     headers: {
-//       'Authorization': authorization
-//     }
-//   })
-//   .then(response => response.json())
-//   .then((data) => {
-//     // 4. Display
-//     const personData = data.person;
-//     console.log(personData);
-//     display(personData);
-//     })
-// });
-
-// end of Yann's code
-
-
-//
 
 
 
-// const drawResponseList = (data) => {
-//   results.innerHTML = '';
-//   data.words.forEach((word) => {
-//     results.insertAdjacentHTML('beforeend', `<li>${word}</li>`);
-//   });
-// };
-
-// const autocomplete = (e) => {
-//   fetch(`https://wagon-dictionary.herokuapp.com/autocomplete/${e.target.value}`)
-//     .then(response => response.json())
-//     .then(data => drawResponseList(data));
-// };
-
-
-
-
-
-// input.addEventListener('keyup', autocomplete);
