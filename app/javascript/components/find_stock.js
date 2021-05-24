@@ -24,7 +24,7 @@ const findStock = () => {
     fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile?symbol=${input.value}&region=US`, {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": "8e5f93ae25msh506ca700c9c8e13p19e4a9jsnc5a2c8083450",
+      "x-rapidapi-key": "RAPIDAPIKEY",
       "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         }
       })
