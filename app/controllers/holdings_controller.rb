@@ -5,10 +5,12 @@ class HoldingsController < ApplicationController
     @account = Account.find(params[:account_id])
     @stocks = Stock.all
     @holding = Holding.new
+    @stock = Stock.new
   end
 
   def create
     @holding = Holding.new(holding_params)
+    @holding.purchase_price = @holding.stock.stock_price
     @holding.account = Account.find(params[:account_id])
     if @holding.save
       redirect_to account_path(@holding.account)

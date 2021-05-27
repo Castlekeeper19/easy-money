@@ -26,11 +26,13 @@
 require "faker"
 
 puts "...clearing database"
+Holding.destroy_all
+Stock.destroy_all
 
 puts "...Creating stocks"
 
 
-  20.times do
+  10.times do
     Stock.create!(
       ticker: Faker::Finance.ticker,
       stock_price: rand(1.0..99.99).round(2),
@@ -39,34 +41,15 @@ puts "...Creating stocks"
   end
 puts "created #{Stock.count} stocks"
 
-
-
-require "faker"
-
-puts "...clearing database"
-
-User.destroy_all
-Workout.destroy_all
-
-puts "...Creating Users & Workouts"
-
-
-
-10.times do
-  User.create!(
-      name:  Faker::Name.name
-      location: Faker::Address.street_address
-      email: Faker::Internet.email
-      password: Faker::Internet.password
-  )
-    1.times do
-      Workout.create!(
-      category: Workout::CATEGORY.sample,
-      location: Faker::Address.street_address,
-      name: Faker::Verb.ing_form
-      user_id:
-
-
-  )
+puts "creating holdings"
+  20.times do
+    stock = Stock.all.sample
+    Holding.create!(
+      stock_id: stock.id,
+      account_id: (Account.all.sample).id,
+      shares: rand(1..10),
+      purchase_price: (stock.stock_price * rand(0.5..1.5)).round(2)
+      )
   end
-end
+puts "created #{Holding.count} holding"
+

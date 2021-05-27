@@ -1,0 +1,24 @@
+    <% @holdings.each do |holding| %>
+      <tr>
+        <th scope="row">*</th>
+        <td><%= holding.stock.ticker %></td>
+        <td>$<%= holding.purchase_price %></td>
+        <td>$<%= holding.stock.stock_price %></td>
+        <td><%= holding.shares %></td>
+        <td>$<%= holding.stock_balance %></td>
+        <% if holding.total_gain > 0 %>
+        <td class = "gain">$<%= holding.total_gain %></td>
+        <% else %>
+        <td class = "loss">$<%= holding.total_gain %></td>
+        <% end %>
+        <td class= "text-center"><%= link_to edit_account_holding_path(holding) do %>
+         <i class="fas fa-edit"></i>
+        <% end %></td>
+        <td class= "text-center"><%= link_to edit_stock_path(holding.stock) do %>
+         <i class="fas fa-sync-alt"></i>
+        <% end %></td>
+        <td class= "text-center"><%= link_to holding_path(holding.id), method: :delete,  data: { confirm: 'Do you want to delete?' } do %>
+         <i class="far fa-money-bill-alt"></i>
+        <% end %></td>
+      </tr>
+    <% end %>
