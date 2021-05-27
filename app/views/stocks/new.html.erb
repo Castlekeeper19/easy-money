@@ -9,21 +9,6 @@
           <input class="form-control mr-auto btn btn-primary" type="submit" id="tickerSubmit">
         </form>
 
-        <table class="table mt-4">
-          <tr class="d-flex justify-content-center text-right">
-            <th class="col-1">Stock Name:</th>
-            <td class="col-8 col-md-5" id="stockName">  </td>
-          </tr>
-          <tr class="d-flex justify-content-center text-right">
-            <th class="col-1">Stock Price:</th>
-            <td class="col-8 col-md-5" id="stockPrice">  </td>
-          </tr>
-          <tr class="d-flex justify-content-center text-right">
-            <th class="col-1">Type:</th>
-            <td class="col-8 col-md-5" id="stockType"> </td>
-          </tr>
-        </table>
-
           <%= simple_form_for [@stock] do |f| %>
           <%= f.input :ticker %>
           <%= f.input :stock_price %>
@@ -32,5 +17,5 @@
         <% end %>
         </div>
       </div>
-       <script src="dist/main.js"></script>
+    <!--    <script src="dist/main.js"></script> -->
     </div>

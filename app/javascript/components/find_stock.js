@@ -4,17 +4,19 @@ console.log()
 
 
 const display = (data) => {
-  stockName.innerHTML = data.shortName;
-  stockPrice.innerHTML = data.regularMarketPrice.raw;
-  stockType.innerHTML = data.quoteType;
+  const stockName = document.querySelector("#stock_ticker");
+
+  const stockPrice = document.querySelector("#stock_stock_price");
+  const stockType = document.querySelector("#stock_asset_type");
+  stockName.value = data.symbol;
+  stockPrice.value = data.regularMarketPrice.raw;
+  stockType.value = data.quoteType;
 }
 
 const findStock = () => {
   const input = document.querySelector("#stockForm input");
   const stockSearch = document.querySelector("#stockForm");
-  const stockName = document.querySelector("#stockName");
-  const stockPrice = document.querySelector("#stockPrice");
-  const stockType = document.querySelector("#stockType");
+  // console.log(stockName);
 
 
   if (stockSearch) {
