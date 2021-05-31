@@ -37,6 +37,8 @@ class HoldingsController < ApplicationController
   def destroy
     @holding = Holding.find(params[:id])
     @holding.destroy
+    @account = @holding.account
+    @account.stock_sold(@holding)
     redirect_to account_path(@holding.account)
   end
 
