@@ -4,8 +4,8 @@ class Account < ApplicationRecord
   has_many :holdings
   has_many :goals
   has_many :stocks, through: :holdings
+  belongs_to :user
   validates :name, presence: true
-  validates :account_type, inclusion: {in: ACCOUNT_TYPES}
 
   def account_balance
     @balance = 0
