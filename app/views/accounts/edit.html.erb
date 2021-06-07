@@ -5,6 +5,7 @@
         <%= simple_form_for @account do |f| %>
           <%= f.input :name %>
           <%= f.input :account_type, collection: Account::ACCOUNT_TYPES, include_blank: false%>
+          <%= f.input :cash_reserve %>
           <%= f.submit "Add", class: "btn btn-info mt-2" %>
         <% end %>
         </div>

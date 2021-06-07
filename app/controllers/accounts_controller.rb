@@ -48,6 +48,6 @@ class AccountsController < ApplicationController
   end
 
   def account_params
-    params.require(:account).permit(:category, :location, :name)
+    params.require(:account).permit(:category, :location, :name, :account_type, :user_id, :cash_reserve)
   end
 end
