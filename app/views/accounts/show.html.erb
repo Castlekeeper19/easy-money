@@ -3,8 +3,13 @@
     <div>
     <h1 class ="mt-3"> <strong>Account:</strong>  <%= @account.name %> </h1>
     <h2> <strong>Account Balance:</strong>  $<%= @account.account_balance %> </h2>
+    <h2> <strong>Cash Reserve:</strong>  $<%= @account.cash_reserve %> </h2>
+
     <h4> <strong>Account Type:</strong> <%= @account.account_type %> </h4>
     </div>
+
+
+
     <div>
       <h5 class="mt-3 text-right"> <%= link_to "Edit Account", edit_account_path(@account)  %> </h5>
       <h5 class= "text-right"> <%= link_to "Remove Account", account_path(@account.id), method: :delete,  data: { confirm: 'Do you want to delete account?' } %></h5>

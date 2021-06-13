@@ -19,6 +19,7 @@
       </div>
       <div class="account_charts col-4" >
       <%= pie_chart Account.group(:name).sum(:balance) %>
+      <%= area_chart Account.group(:created_at).sum(Account.total_balance) %>
     </div>
   </div>
 </div>

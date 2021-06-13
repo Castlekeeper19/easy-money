@@ -1,5 +1,5 @@
 class HoldingsController < ApplicationController
-  # before_action :set_holding, only: [:destroy]
+  before_action :set_holding, only: [:destroy]
 
   def new
     @account = Account.find(params[:account_id])
@@ -13,6 +13,7 @@ class HoldingsController < ApplicationController
     @holding.purchase_price = @holding.stock.stock_price
     @holding.account = Account.find(params[:account_id])
     if @holding.save
+      @holding.account.stock_purchased(@holding)
       redirect_to account_path(@holding.account)
     else
       render :new
@@ -36,9 +37,9 @@ class HoldingsController < ApplicationController
 
   def destroy
     @holding = Holding.find(params[:id])
-    @holding.destroy
     @account = @holding.account
     @account.stock_sold(@holding)
+    @holding.destroy
     redirect_to account_path(@holding.account)
   end
 

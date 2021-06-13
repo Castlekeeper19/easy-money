@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'faker'
 gem "chartkick"
 gem 'devise'
+gem 'groupdate'
 
 #seed gems
 gem 'rest-client', '~> 2.1'
