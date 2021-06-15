@@ -1,2 +1,58 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'banner' %>
+
+<div class="container home-container intro">
+  <h2>Keep your team close.</h2>
+  <p>Kyoro is a management tool that helps your team stay connected through Slack integration and analysis - a quick way to check how your team is doing so that you can meet their needs. Don't let the distance keep your team from feeling connected.</p>
+</div>
+<div class="container home-features">
+  <div class="home-feature top-feature">
+    <%# <div class="home-feature-bg"></div> %>
+    <%= image_tag "emergency.png", class: "card-img-1" %>
+    <div class="home-feature-text">
+      <h3>Don't let life get you down</h3>
+      <p class="card-text">Monease will help you establish an emergency fund for all of life's tough situations.  That way you can be at ease no matter the situation.</p>
+    </div>
+  </div>
+  <div class="home-feature middle-feature">
+    <%# <div class="home-feature-bg"></div> %>
+    <div class="home-feature-text">
+      <h3>Save where it counts</h3>
+      <p class="card-text">Where your money is saved can be just as important as how much is saved.  Monease will help you find accounts that will get the returns you expect.</p>
+    </div>
+    <%= image_tag "cash_stack.png", class: "card-img-2" %>
+  </div>
+  <div class="home-feature bottom-feature">
+    <%= image_tag "house_goal.png", class: "card-img-3" %>
+    <div class="home-feature-text">
+      <%# <div class="home-feature-bg"></div> %>
+      <h3>Reach your goals!</h3>
+      <p class="card-text">Let's make your dreams into reality!  Monease will help work with you  </p>
+    </div>
+  </div>
+</div>
+<div class="home-reviews slick">
+  <%# <h3>These companies trusted us:</h3> %>
+  <div class=" container review-carousel">
+    <div class="review-card">
+      <%= image_tag "connecpet2.png", alt: "" %>
+      <%# <h4>ConnecPet</h4> %>
+      <p><span><i class="fas fa-quote-right"></i></span> I now know what's important to my team members, and happy to say that I KNOW they are getting what they need on my team.</p>
+    </div>
+    <div class="review-card">
+      <%= image_tag "Baiku2.png" %>
+      <%# <h4>BAIKU Inc.</h4> %>
+      <p><span><i class="fas fa-quote-right"></i></span> Kyoro is so easy to use. It's really great for when I just need a quick glance to see how my team engagement is!</p>
+    </div>
+    <div class="review-card">
+      <%= image_tag "bill_splitter_2.png", class: "logo-billsplitter" %>
+      <%# <h4>Bill Splitter</h4> %>
+      <p><span><i class="fas fa-quote-right"></i></span> With our whole team working remotely, Kyoro has helped us keep our team together.</p>
+    </div>
+    <div class="review-card">
+      <%# image_tag "https://logovtor.com/wp-content/uploads/2020/10/le-wagon-logo-vector.png",class: "logo-lewagon", alt: "" %>
+      <%= image_tag "le_wagon_2.png", alt: "" %>
+      <%# <h4>Le Wagon</h4> %>
+      <p><span><i class="fas fa-quote-right"></i></span> A life-saver! Simply the best. Better than all the rest.</p>
+    </div>
+  </div>
+</div>
