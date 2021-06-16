@@ -1,9 +1,6 @@
-<div class="banner">
-  <div class="banner_image" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), <%= image_tag 'banner.png' %>);">
-
-
-  <div class="banner-text">
-    <h1>A better way to connect</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'banner.png' %>);">
+  <div class="banner-text container">
+    <h1>Welcome to saving made easy</h1>
     <p>Keep your team engaged with Kyoro's powerful analytical tools.</p>
     <% if !user_signed_in? %>
       <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
@@ -12,5 +9,5 @@
        <%= link_to "Get started", accounts_path, class: "btn btn-primary" %>
     <% end %>
   </div>
-  </div>
 </div>
+
