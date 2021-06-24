@@ -2,11 +2,11 @@
   <div class="banner-text container">
     <h1>Welcome to saving made easy</h1>
     <p>Keep your team engaged with Kyoro's powerful analytical tools.</p>
-    <% if !user_signed_in? %>
-      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+       <%= link_to "Get started", accounts_path, class: "button btn" %>
     <%# <a class="btn btn-flat" href="#">Learn more</a> %>
     <% else %>
-       <%= link_to "Get started", accounts_path, class: "button btn" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
