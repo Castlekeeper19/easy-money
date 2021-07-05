@@ -12,7 +12,7 @@
 .home-features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 8px;
+  grid-gap: 16px;
 
 
 }
@@ -40,12 +40,14 @@
   text-align: center;
   height: 50%;
  h3 {
-  color: #DA4450;
+  color: $red;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
   font-weight: bold;
   font-family: 'Arimo', sans-serif;
 }
   p {
     color: white;
+    font-size: 16px;
   }
 
 }

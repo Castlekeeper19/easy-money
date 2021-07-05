@@ -13,9 +13,9 @@ class Account < ApplicationRecord
     holdings.each do |holding|
      balance += (holding.stock_balance)
     end
-    balance.round(2)
-    save
     balance
+    save
+    ('%.2f' % balance).to_f
   end
 
   def self.total_balance
@@ -23,12 +23,12 @@ class Account < ApplicationRecord
     Account.all.each do |account|
       sum += account.account_balance
     end
-    sum.round(2)
+    '%.2f' % sum.to_f
   end
 
   def stock_purchased(holding)
-    self.cash_reserve -= holding.stock_balance
-    self.cash_reserve.round(2)
+    cash_reserve -= holding.stock_balance
+    '%.2f' %  cash_reserve
     save
   end
 

@@ -3,7 +3,7 @@
     <div>
     <h1 class ="mt-3"> <strong>Account:</strong>  <%= @account.name %> </h1>
     <h2> <strong>Account Balance:</strong>  $<%= @account.account_balance %> </h2>
-    <h2> <strong>Cash Reserve:</strong>  $<%= @account.cash_reserve %> </h2>
+    <h2> <strong>Cash Reserve:</strong>  $<%= '%.2f' % @account.cash_reserve %> </h2>
 
     <h4> <strong>Account Type:</strong> <%= @account.account_type %> </h4>
     </div>
