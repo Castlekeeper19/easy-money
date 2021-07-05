@@ -1,5 +1,12 @@
 .intro {
-  margin: 12px 0;
+  margin: 16px 0;
+  text-align: center;
+   h2, p {
+    color: black;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    margin: 8px 0;
+  }
 }
 
 .home-features {
@@ -21,7 +28,11 @@
   margin: 12px 4px;
   background-color: $blue;
   box-shadow: 0 0 1px 1px black;
-  height: 400px;
+  height: 500px;
+  img {
+    width: 60%;
+    object-fit: contain;
+  }
 
 }
 
@@ -30,6 +41,8 @@
   height: 50%;
  h3 {
   color: #DA4450;
+  font-weight: bold;
+  font-family: 'Arimo', sans-serif;
 }
   p {
     color: white;
@@ -37,6 +50,5 @@
 
 }
 
-.home-feature img {
-  width: 70%;
-}
+
+
