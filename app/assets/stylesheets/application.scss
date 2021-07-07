@@ -19,9 +19,15 @@ body {
   background-color: #f9f9f9;
 }
 
-h1, h2, h3, h4, p {
+h4, h5 {
   color: $light-blue;
 }
+
+h1, h2, h3 {
+  font-family: 'Arimo', sans-serif;
+  color: $blue;
+}
+
 
 label {
   color: $black;
