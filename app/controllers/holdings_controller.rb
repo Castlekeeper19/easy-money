@@ -14,6 +14,7 @@ class HoldingsController < ApplicationController
     @holding.account = Account.find(params[:account_id])
     if @holding.save
       @holding.account.stock_purchased(@holding)
+      @holding.account.account_balance
       redirect_to account_path(@holding.account)
     else
       render :new
@@ -29,6 +30,7 @@ class HoldingsController < ApplicationController
   def update
     @holding = Holding.find(params[:id])
     if @holding.update(holding_params)
+      @holding.account.account_balance
       redirect_to account_path(@holding.account)
     else
       render :edit

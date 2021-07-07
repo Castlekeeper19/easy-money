@@ -9,12 +9,11 @@ class Account < ApplicationRecord
 
 
   def account_balance
-    balance = cash_reserve || 0
+    self.balance = cash_reserve || 0
     holdings.each do |holding|
-     balance += (holding.stock_balance)
+     self.balance += (holding.stock_balance)
     end
-    balance
-    save
+    self.save
     ('%.2f' % balance).to_f
   end
 
